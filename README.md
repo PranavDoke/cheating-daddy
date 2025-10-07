@@ -58,3 +58,65 @@ A real-time AI assistant that provides contextual help during video calls, inter
 - Gemini API key
 - Screen recording permissions
 - Microphone/audio permissions
+
+---
+
+## 🔄 React Migration (Interview Assignment)
+
+This fork includes a complete frontend migration from **Lit Web Components** to **React 19.2.0** as part of the Arakoo internship interview assignment.
+
+### Tech Stack Changes
+
+| Component | Original | Migrated |
+|-----------|----------|----------|
+| UI Framework | Lit 3.x | **React 19.2.0** |
+| Build Tool | - | **Vite 7.1.9** |
+| State Management | Lit Properties | **React Hooks (useState, useEffect)** |
+| Styling | CSS + Lit | **CSS Modules + Modern Gradients** |
+
+### What Changed
+
+#### ✅ New React Architecture
+- **11 React Components** created in `src/react/`:
+  - `App.jsx` - Main app with centralized state management (~400 lines)
+  - `AppHeader.jsx` - Header with navigation and timer
+  - `MainView.jsx` - Enhanced landing page with modern UI
+  - `AssistantView.jsx` - AI chat interface
+  - 5 additional view components (Onboarding, Customize, Help, History, Advanced)
+
+#### ✅ Build System
+- **Vite Configuration** (`vite.config.js`) with custom file copy plugin
+- **Build Scripts**: `npm run build` → `npm start`
+- **Output**: 12.17KB CSS + 221.94KB JS (1.10-1.22s build time)
+
+#### ✅ Enhanced Features
+- **Modern UI**: Gradient design with smooth animations
+- **Better Error Handling**: API key validation with visual feedback
+- **Improved UX**: Step-by-step guide, help cards, success/error messages
+- **Fixed Bugs**: Removed auto-session initialization, added error listeners
+
+#### ✅ Preserved Features
+- All original functionality maintained (screen/audio capture, stealth mode)
+- 12 keyboard shortcuts working
+- IPC communication intact
+- Cross-platform compatibility
+
+### Migration Documentation
+See comprehensive documentation in repository:
+- `REACT_MIGRATION.md` - Technical migration details
+- `LOOM_VIDEO_SCRIPT.md` - Video walkthrough guide
+- `SUBMISSION_CHECKLIST.md` - Complete assignment checklist
+- 9+ additional documentation files
+
+### Quick Start (React Version)
+```bash
+npm install          # Install React dependencies
+npm run build        # Build with Vite
+npm start            # Build + Run Electron app
+npm run package      # Package for distribution
+```
+
+### Screenshots
+[Enhanced React UI with modern gradient design - See LOOM_VIDEO_SCRIPT.md for demo]
+
+---
